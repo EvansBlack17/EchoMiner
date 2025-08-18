@@ -19,3 +19,4 @@ if (keyboard_check(ord("D"))) {
 	direction = 0;
 }
 image_angle = direction;
+camera_set_view_pos(view_camera[0], x-view_get_wport(0)/2, y-view_get_hport(0)/2);
