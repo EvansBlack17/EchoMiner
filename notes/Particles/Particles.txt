@@ -1,0 +1,33 @@
+global.particleSystem = part_system_create_layer("Particles", true);
+
+global.explosion1 = part_type_create();
+part_type_shape(global.explosion1, pt_shape_explosion);
+part_type_size(global.explosion1, 1, 2, 0, 0);
+part_type_scale(global.explosion1, 1, 1);
+part_type_color3(global.explosion1, c_white, c_yellow, c_orange); 
+part_type_alpha2(global.explosion1, 1, 0);
+part_type_speed(global.explosion1, 2, 4, 0, 0);
+part_type_direction(global.explosion1, 0, 359, 0, 0);
+part_type_orientation(global.explosion1, 0, 359, 0, 0, 0);
+part_type_blend(global.explosion1, true); 
+part_type_life(global.explosion1, 20, 30);
+
+#event other_game_end
+part_type_destroy(global.explosion1);
+part_type_destroy(global.p_railgun);
+part_type_destroy(global.p_aps);
+part_type_destroy(global.p_cryogen);
+part_type_destroy(global.p_enemyOutside);
+part_emitter_destroy(global.particleSystem, global.Emitter1);
+part_emitter_destroy(global.particleSystem, global.e_emitterRailgun);
+part_emitter_destroy(global.particleSystem, global.e_emitterAPS);
+//(global.particleSystem, global.e_emitterEnemyOutside);
+part_system_destroy(global.particleSystem);
+show_debug_message("PARTICLE SYSTEM DESTROYED");
+
+//
+
+part_emitter_region(global.particleSystem, global.Emitter1, bbox_left, bbox_right,bbox_top, bbox_bottom, ps_shape_ellipse, ps_distr_gaussian);
+part_emitter_burst(global.particleSystem, global.Emitter1, global.explosion1, 10);
+or
+part_particles_create(global.P_System, mouse_x, mouse_y, global.Particle1, 50);

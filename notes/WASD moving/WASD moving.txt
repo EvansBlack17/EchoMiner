@@ -1,0 +1,10 @@
+var delta_x = keyboard_check(ord('D')) - keyboard_check(ord('A'));
+var delta_y = keyboard_check(ord('S')) - keyboard_check(ord('W'));
+
+var angle = point_direction(0, 0, delta_x, delta_y);
+
+if (delta_x != 0 || delta_y != 0)
+{
+	x += lengthdir_x(angle, move_speed);
+	y += lengthdir_y(angle, move_speed);
+}

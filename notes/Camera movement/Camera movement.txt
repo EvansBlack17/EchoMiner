@@ -1,0 +1,7 @@
+1. Create obj_camera in obj_player create event
+2. In obj_camera in step event write this:
+
+x - lerp(x, obj_player.x, 0.05);
+y - lerp(y, obj_player.y, 0.05);
+
+3. In room properties set to follow obj_camera and border options
