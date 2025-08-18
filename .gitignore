@@ -1,0 +1,18 @@
+# GameMaker Studio
+*.yyz
+*.yymps
+*.log
+*.suo
+*.user
+*.cache
+*.iml
+
+# Build/Temp
+.vs/
+.vscode/
+temp/
+output/
+config/
+build/
+*.yyp-backup
+*.yyp-temp
