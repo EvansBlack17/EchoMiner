@@ -1,2 +1,2 @@
 speed = 5;
-onSilo = true;
+onSilo = false;
